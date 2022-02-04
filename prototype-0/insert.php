@@ -4,7 +4,7 @@
         $Produit = $_POST['produit'];
         $Prix    = $_POST['Prix'];
       
-		$person = array($Produit, $Prix); 
+		$Produits = array($Produit, $Prix); 
       
 		$fichier = file_get_contents('produits.json');
 		$data = json_decode($file, true);
