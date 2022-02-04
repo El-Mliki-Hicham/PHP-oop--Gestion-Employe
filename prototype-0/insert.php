@@ -1,34 +1,38 @@
 <?php 
     if ( !empty($_POST)) { 
         // post values
-        $Produit = $_POST['produit'];
-        $Prix    = $_POST['Prix'];
+        $LastName = $_POST['LastName'];
+        $FirstName    = $_POST['FirstName'];
+        $Age    = $_POST['Age'];
       
-		$Produits = array($Produit, $Prix); 
+		$person = array($FirstName, $LastName , $Age); 
       
-		$fichier = file_get_contents('produits.json');
-		$data = json_decode($fichier, true);
+		$fichier = file_get_contents('person.json');
+		$data = json_decode($fichier);
 	
-		array_push($data, $Produits);
-		file_put_contents("produits.json", json_encode($data));
+		array_push($data, $person);
+		file_put_contents("person.json", json_encode($data));
 		header("Location: index.php");
 
     }
 ?>
 <div>
         <div>
-		<div><h3>Create a User</h3>
+		<div><h3>ajoute</h3>
         <form method="POST" action="">
 			<div>
-				<label for="inputFName">First Name</label>
-				<input type="text" required="required" id="inputFName" name="produit" placeholder="Prix">
-				<span></span>
+				<label >First Name</label>
+				<input type="text"  name="FirstName" >
 			</div>
 			
 			<div>
-				<label for="inputLName">Last Name</label>
-				<input type="text" required="required" id="inputLName" name="Prix" placeholder="Prix">
-        		<span></span>
+				<label >Last Name</label>
+				<input type="text"  name="LastName" >
+			</div>
+			
+			<div>
+				<label >Age</label>
+				<input type="text"  name="Age" >
 			</div>
 			
 			

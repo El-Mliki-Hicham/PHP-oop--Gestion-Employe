@@ -33,4 +33,5 @@ $person= array($LastName,$Age,$firstName);
 <input type="text"name="Age" >
 <br>
 <button type="submit">ajoute</button>
+<a href="indx.php">Back</a>
 </form>
