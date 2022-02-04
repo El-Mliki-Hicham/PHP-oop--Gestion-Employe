@@ -7,9 +7,9 @@
 		$Produits = array($Produit, $Prix); 
       
 		$fichier = file_get_contents('produits.json');
-		$data = json_decode($file, true);
+		$data = json_decode($fichier, true);
 	
-		array_push($data, $person);
+		array_push($data, $Produits);
 		file_put_contents("produits.json", json_encode($data));
 		header("Location: index.php");
 

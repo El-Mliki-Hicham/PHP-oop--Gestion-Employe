@@ -11,9 +11,7 @@ $data = json_decode($getfile);
 					<th>No.</th>
 					<th>First Name</th>
 					<th>Last Name</th>
-					<th>Age</th>
-					<th>Gender</th>
-					<th>Action</th>
+					
 				</tr>		
 				<?php $index=0;foreach ($data as $Produits){
 				$index++;  
@@ -23,8 +21,7 @@ $data = json_decode($getfile);
 					<td><?php echo $index; ?></td>
 					<td><?php echo $Produits[0];?></td>
 					<td><?php echo $Produits[1]; ?></td>
-					<td><?php echo $Produits[2]; ?></td>
-					<td><?php echo $Produits[3]; ?></td>
+					
 					<td>
 						<a href="update.php?id=<?php echo $index; ?>">Edit</a>
 						<a href="delete.php?id=<?php echo $index; ?>">Delete</a>
