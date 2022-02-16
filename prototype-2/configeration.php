@@ -1,8 +1,8 @@
 <?php
-   $conn = mysqli_connect('localhost', 'maskoul', 'test123', 'employees_db');
+   $connect = mysqli_connect('localhost', 'hicham', 'mlikihii', 'demo');
 
    // check connection
- if(!$conn){
+ if(!$connect){
       echo 'Connection error: ' . mysqli_connect_error(); 
   }
 ?>
