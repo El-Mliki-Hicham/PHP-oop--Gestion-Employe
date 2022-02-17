@@ -5,7 +5,7 @@ $data = json_decode($fichier);
 foreach ($data as $value) {
      if($value[0]==$_GET["id"]){
          
-         
+         break;
      }
 }
 }
