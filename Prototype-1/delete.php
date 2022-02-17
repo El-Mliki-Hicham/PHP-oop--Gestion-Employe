@@ -10,6 +10,7 @@ if(isset($_GET['id'])){
                 unset($data[$i]);
                 
                 $data = array_values($data);
+                
                 file_put_contents("personnes.json",json_encode($data));
                 break;
             }
