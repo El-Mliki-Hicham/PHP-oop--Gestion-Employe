@@ -1,9 +1,8 @@
 <?php
-    class Employee {
+    class Employe {
         private $id;
         private $firstName;
         private $lastName;
-        private $gender;
         private $age;
 
         public function getId(){
@@ -29,13 +28,7 @@
             $this->lastName= $value;
         }
 
-        public function getGender(){
-            return $this->gender;
-        }
-
-        public function setGender($value){
-            $this->gender= $value;
-        }
+  
 
         public function getAge(){
             return $this->age;

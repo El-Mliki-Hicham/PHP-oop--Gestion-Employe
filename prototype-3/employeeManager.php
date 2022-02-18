@@ -1,67 +1,83 @@
-<?php
+<?php 
 
-    class EmployeeManager {
-
-        public function getAllEmployees($conn){
-            $sqlGetData = 'SELECT id, Prenom, Nom, Age FROM persone';
-            $result = mysqli_query($conn ,$sqlGetData);
-            $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            return $data;
-        }
+class EmployeManager {
 
 
-        public function insertEmployee($conn, $employee){
-            $firstName = $employee->getFirstName();
-            $lastName = $employee->getLastName();
-            $age = $employee->getAge();
-            $gender = $employee->getGender();
+    // getEmplyoes =  pour affichage dans index.php
+    public function getEmplyoes($connectData){
+        $getData = 'SELECT id,  Prenom,Nom,Age FROM personnes';
+        $resulta = mysqli_query($connectData,$getData);
+        $data = mysqli_fetch_all($resulta,MYSQLI_ASSOC);
+        return $data ; 
+    }
 
-                 // sql insert query
-        $sqlInsertQuery = "INSERT INTO persone(Prenom,Nom,Age,id) 
-                            VALUES('$firstName', 
-                                    '$lastName',
-                                    '$age', 
-                                    '$gender')";
+    // insertEmploye = pour ajoute les information dans fichier insert.php 
+    public function insertEmploye($connectData,$employe){
+        $Prenom = $employe->getFirstName();
+        $Nom = $employe->getLastName();
+        $Age = $employe->getAge();
 
-        mysqli_query($conn, $sqlInsertQuery);
-        }
+        $insertData = "INSERT INTO personnes(Prenom,Nom,Age,id)
+        VALUE ('$Prenom','$Nom','$Age')";
+        
+        mysqli_query($connectData,$insertData);
+    }
 
-
-        public function deleteEmployee($conn, $id){
-            $sqlDeleteQuery = "DELETE FROM persone WHERE id= '$id'";
-
-            mysqli_query($conn, $sqlDeleteQuery);
-        }
-
-
-        public function editEmployee($conn, $employee, $id){
-            $first_name = $employee->getFirstName();
-            $last_name = $employee->getLastName();
-            $gender = $employee->getGender();
-            $age = $employee->getAge();
-     
-            // Update query
-            $sqlUpdateQuery = "UPDATE persone SET 
-                         Prenom='$first_name', Nom='$last_name', Age='$age'
-                         WHERE id=$id";
-     
-             // Make query 
-             mysqli_query($conn, $sqlUpdateQuery);
-       
-        }
-
-        public function getEmployee($conn, $id){
-            $sqlGetQuery = "SELECT * FROM persone WHERE id= $id";
     
-        // get result
-        $result = mysqli_query($conn, $sqlGetQuery);
+    // SelectRowEdit = pour selection row et afficher dans input 
+    public function SelectRowEdit($connectData,$id){
+        $getRow = "SELECT * FROM personnes where id=$id";
+        $resulta= mysqli_query($connectData, $getRow);
+        $data = mysqli_fetch_assoc($resulta);
+        return $data;
+    } 
+
+
+    // EditEmploye = modification row
+    public function EditEmloye($connectData,$employe,$id){
+        $Prenom = $employe->getFirstName();
+        $Nom = $employe->getLastName();
+        $Age = $employe->getAge();
+
+        $EditData = "UPDATE personnes 
+                    SET Prenom='$Prenom',Nom='$Nom',Age='$Age'
+                    WHERE id=$id";
+
+        mysqli_query($connectData,$EditData);
+
+    }    
+
     
-        // fetch to array
-        $employee = mysqli_fetch_assoc($result);
-        return $employee;
-        }
+    // DeleteEmloye = pour supprime row 
+    public function DeleteEmploye($connectData,$id){
+        $DeletRow = "DELETE FROM personnes where id=$id";
+        mysqli_query($connectData,$DeletRow);
     }
 
 
-    
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
