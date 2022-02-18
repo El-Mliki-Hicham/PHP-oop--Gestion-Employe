@@ -27,7 +27,7 @@ Prenom : 	<input type="text" name="prenom" >
 Nom: 		<input type="text" name="nom" >
 Age : 		<input type="text" name="age" >
    
-<button type="submit"></button>
+<button type="submit">ajoute</button>
 
 </form>
 
