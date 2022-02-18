@@ -41,5 +41,5 @@ include 'configeration.php';
 	<input type="text"  value="<?=$Nom ?>"name="Nom">
 	<input type="text" value="<?=$Age ?>" name="Age">
 	
-	<button type='submit'>ajoute</button>
+	<button type='submit'>Modifier</button>
 	</form>
