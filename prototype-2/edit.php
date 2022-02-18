@@ -1,14 +1,11 @@
 <?php  
 include 'configeration.php';
 
-
-
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-       
-        $sqlDelete = "SELECT * FROM personnes WHERE id=$id";
+        $selectRow = "SELECT * FROM personnes WHERE id=$id";
         
-        $result = mysqli_query($connect, $sqlDelete);
+        $result = mysqli_query($connect, $selectRow);
         $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
         
             
@@ -23,23 +20,36 @@ include 'configeration.php';
 
     if(!empty($_POST)){
         
-        $Prenom = $_POST['Prenom'];
+        $prenom = $_POST['Prenom'];
         $Nom = $_POST['Nom'];
         $Age = $_POST['Age'];
 
-        $Update ="UPDATE personnes SET 
+        $sqlUpdateQuery ="UPDATE personnes SET 
         Prenom='$Prenom',Nom='$Nom',Age='$Age' WHERE id=$id ";
 
-        $result = mysqli_query($connect, $Update);
+        mysqli_query($connect, $sqlUpdateQuery);
         header('location: index.php');
         
     };
     
 ?>
 
-<input type="text"  value="<?=$Prenom ?>" name="Prenom">
-	<input type="text"  value="<?=$Nom ?>"name="Nom">
-	<input type="text" value="<?=$Age ?>" name="Age">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="" method='post'>
 	
-	<button type='submit'>Modifier</button>
+	<input type="text" name="Prenom" value=" <?php echo $Prenom?>">
+	<input type="text" name="Nom"  value=" <?php echo $Nom?>">
+	<input type="text" name="Age"  value=" <?php echo $Age?>">
+	
+	<button type='submit'>ajoute</button>
 	</form>
+</body>
+</html>
