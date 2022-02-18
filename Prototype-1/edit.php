@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET)){
 $fichier = file_get_contents("personnes.json");
-$data = json_decode($fichier);
+$data = json_decode($fichier);z
 foreach ($data as $value) {
      if($value[0]==$_GET["id"]){
         $afficherValue = $value;
