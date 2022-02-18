@@ -4,9 +4,9 @@
     
         if(isset($_GET['id'])){
             $id = $_GET['id'];
-            $sqlDelete = "DELETE FROM personnes WHERE id= '$id'";
+            $Delete = "DELETE FROM personnes WHERE id= '$id'";
 
-            mysqli_query($connect, $sqlDelete);
+            mysqli_query($connect, $Delete);
             header('Location: index.php');
             
         

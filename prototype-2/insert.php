@@ -1,17 +1,17 @@
 <?php
 
-    include 'config.php';
+    include 'configeration.php';
     if(!empty($_POST)){
         $Prenom = $_POST['Prenom'];
         $Nom = $_POST['Nom'];
         $Age = $_POST['Age'];
-        $person = array($firstName, $lastName, $age);
+        $person = array($Prenom, $Nom,$Age);
 
         // sql insert query
-        $sqlInsert= "INSERT INTO personnes(Prenom,Nom, Age, ) 
+        $Insert= "INSERT INTO personnes(Prenom,Nom,Age) 
                                 VALUES('$Prenom', '$Nom', '$Age')";
         
-        mysqli_query($connect, $sqlInsert);
+        mysqli_query($connect, $Insert);
      
         header("Location: index.php");
 

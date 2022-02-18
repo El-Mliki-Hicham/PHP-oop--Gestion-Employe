@@ -1,9 +1,9 @@
 <?php
-    include 'config.php';
+    include 'configeration.php';
 
-    $sqlGetData = 'SELECT id, Prenom, Nom, Age,  FROM personnes';
-    $result = mysqli_query($connect ,$sqlGetData);
-    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $sqlGetData = 'SELECT id,Prenom,Nom,Age FROM personnes';
+    $result = mysqli_query($connect,$sqlGetData);
+    $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 ?>
 
@@ -12,11 +12,11 @@
 <html lang="en">
 <body>
     <div>
-        <a href="insert.php">Insert Data</a>
+        <a href="insert.php">ajoute les information</a>
         <table>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Prenom </th>
+                <th>Nom</th>
                 <th>Age</th>
          
                 <th>Action</th>
@@ -40,4 +40,4 @@
         </table>
     </div>
 </body>
-</html
+</html  
