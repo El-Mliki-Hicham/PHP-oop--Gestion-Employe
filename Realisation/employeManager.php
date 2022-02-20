@@ -5,7 +5,7 @@ class EmployeManager {
 
     // getEmployes =  pour affichage dans index.php
     public function getEmployes($connectData){
-        $getData = 'SELECT id,Prenom,Nom,Age FROM personnes';
+        $getData = 'SELECT id,Prenom,Nom,Date_de_naissance,Departement,Salaire	 FROM personnes';
         $resulta = mysqli_query($connectData,$getData);
         $data = mysqli_fetch_all($resulta,MYSQLI_ASSOC);
         return $data ; 
@@ -15,10 +15,11 @@ class EmployeManager {
     public function insertEmploye($connectData,$employe){
         $Prenom = $employe->getFirstName();
         $Nom = $employe->getLastName();
-        $Age = $employe->getAge();
-
-        $insertData = "INSERT INTO personnes(Prenom,Nom,Age)
-        VALUE ('$Prenom','$Nom','$Age')";
+        $Date_de_naissance	 = $employe->getDate_de_naissance();
+        $Departement =$employe->getDepartement();
+        $Salaire =$employe->getSalaire();
+        $insertData = "INSERT INTO personnes(Prenom,Nom,Date_de_naissance,Departement,Salaire)
+        VALUE ('$Prenom','$Nom','$Date_de_naissance','$Departement','$Salaire')";
         
         mysqli_query($connectData,$insertData);
     }
@@ -38,10 +39,11 @@ class EmployeManager {
     public function EditEmloye($connectData,$employe,$id){
         $Prenom = $employe->getFirstName();
         $Nom = $employe->getLastName();
-        $Age = $employe->getAge();
-
+        $Date_de_naissance = $employe->getDate_de_naissance();
+        $Departement =$employe->getDepartement();
+        $Salaire =$employe->getSalaire();
         $EditData = "UPDATE personnes 
-                    SET Prenom='$Prenom',Nom='$Nom',Age='$Age'
+                    SET Prenom='$Prenom',Nom='$Nom',Date_de_naissance='$Date_de_naissance',Departement='$Departement',Salaire='$Salaire'	
                     WHERE id=$id";
 
         mysqli_query($connectData,$EditData);

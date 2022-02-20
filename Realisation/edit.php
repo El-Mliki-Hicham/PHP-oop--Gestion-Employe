@@ -21,7 +21,9 @@
 
         $employe->setFirstName($_POST['prenom']);
         $employe->setLastName($_POST['nom']);
-        $employe->setAge($_POST['age']);
+        $employe->setDate_de_naissance	($_POST['date_de_naissance']);
+        $employe->setDepartement($_POST['departement']);
+        $employe->setSalaire($_POST['salaire']);
         $employeManager->EditEmloye($connectData,$employe,$id);
         header('Location: index.php');
     }
@@ -41,24 +43,30 @@
     <link rel="stylesheet" href="css/css.input/style.css">
 </head>
 <body>
-    <div class="registration-form">
+
+<div class="registration-form">
         <form method="POST">
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
             <div class="form-group">
-                <input  class="form-control item" id="username" value=<?php echo $afficherValue['Prenom']?>  name="prenom" placeholder="Prenom">
+                <input  class="form-control item" id="username" value=<?php echo $afficherValue['Prenom']?> name="prenom" placeholder="Prenom">
             </div>
             
             <div class="form-group">
-                <input  class="form-control item" id="email" name="nom" value=<?php echo $afficherValue['Nom']?>  placeholder="Nom">
+                <input  class="form-control item" id="" value=<?php echo $afficherValue['Nom']?> name="nom" placeholder="Nom">
             </div>
             <div class="form-group">
-                <input  class="form-control item" id="phone-number" name="age"value=<?php echo $afficherValue['Age']?>  placeholder="Age">
+                <input type="date" class="form-control item" id="phone-number"value=<?php echo $afficherValue['Date_de_naissance']?> name="date_de_naissance" placeholder="Date_de_naissance">
             </div>
-           
             <div class="form-group">
-                <button type="submit" class="btn btn-block create-account">modifier</button>
+                <input  class="form-control item" id="" name="departement" value=<?php echo $afficherValue['Departement']?> placeholder="Departement">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control item"  id="" name="salaire" value=<?php echo $afficherValue['Salaire']?> placeholder="Salaire">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">ajoute</button>
             </div>
         </form>
         <div class="social-media">
@@ -70,3 +78,4 @@
   
 </body>
 </html>
+

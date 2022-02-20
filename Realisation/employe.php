@@ -19,15 +19,26 @@
         public function setLastName($value){
             $this->lastName= $value;
         }
-
-  
-
-        public function getAge(){
-            return $this->age;
+         public function  getDepartement(){
+            return $this->Departement;
+         }
+         public function  setDepartement($value){
+             $this->Departement = $value;
         }
 
-        public function setAge($value){
-            $this->age = $value;
+        public function getDate_de_naissance(){
+            return $this->Date_de_naissance;
+        }
+
+        public function setDate_de_naissance($value){
+            $this->Date_de_naissance = $value;
+        }
+        public function getSalaire(){
+            return $this->Salaire;
+        }
+
+        public function setSalaire($value){
+            $this->Salaire = $value;
         }
     }
 ?>

@@ -10,8 +10,9 @@
 
 	   $employe->setFirstName($_POST['prenom']);
 	   $employe->setLastName($_POST['nom']);
-	   $employe->setAge($_POST['age']);
-
+	   $employe->setDate_de_naissance($_POST['date_de_naissance']);
+       $employe->setDepartement($_POST['departement']);
+       $employe->setSalaire($_POST['salaire']);
 	   $employeManager->insertEmploye($connectData,$employe);
 	   header("Location: index.php");
    }
@@ -46,15 +47,21 @@
             </div>
             
             <div class="form-group">
-                <input  class="form-control item" id="email" name="nom" placeholder="Nom">
+                <input  class="form-control item" id="" name="nom" placeholder="Nom">
             </div>
             <div class="form-group">
-                <input  class="form-control item" id="phone-number" name="age" placeholder="Age">
+                <input type="date" class="form-control item" id="phone-number" name="date_de_naissance" placeholder="Date_de_naissance">
             </div>
-           
+            <div class="form-group">
+                <input  class="form-control item" id="" name="departement" placeholder="Departement">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control item" id="" name="salaire" placeholder="Salaire">
+            </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">ajoute</button>
             </div>
+            
         </form>
         <div class="social-media">
             

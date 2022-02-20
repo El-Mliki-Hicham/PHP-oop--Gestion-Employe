@@ -24,20 +24,20 @@ $data = $employeManager->getEmployes($connectData);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/css.index/bootstrap.min.css">
-    
+
     <!-- Style -->
     <link rel="stylesheet" href="css/css.index/style.css">
 
    
   </head>
   <body style=" background-color: #dee9ff;">
-      
+  <h1 class="text-center" id="titre">Gestion des employés</H1>
   
 
   <div class="content">
     
     <div class="container">
-      <h2 class="mb-5"><a href="insert.php"  class="btn btn-primary"> ajoute </a>  </h2>
+      <h2 class="mb-5"><a href="insert.php"  class="btn btn-primary"> Ajouter un nouveau employé </a>  </h2>
 
       <div class="table-responsive custom-table-responsive">
 
@@ -50,7 +50,9 @@ $data = $employeManager->getEmployes($connectData);
               <th scope="col">id</th>
               <th scope="col">Prenom</th>
               <th scope="col">Nom</th>
-              <th scope="col">Age</th>
+              <th scope="col">Date de naissance</th>
+              <th scope="col">Departement</th>
+              <th scope="col">Salaire</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -67,7 +69,9 @@ $data = $employeManager->getEmployes($connectData);
                 <td><?= $value['id']?></td>
                 <td><?= $value['Prenom']?></td>
                 <td><?= $value['Nom']?></td>
-                <td><?= $value['Age']?></td>
+                <td><?= $value['Date_de_naissance']?></td>
+                <td><?= $value['Departement']?></td>
+                <td><?= $value['Salaire']?></td>
                 <td>
                     <a href="edit.php?id=<?php echo $value['id'] ?>" class="btn btn-success">Edit</a>
                     <a href="delete.php?id=<?php echo $value['id'] ?>" class="btn btn-danger">delete</a>
