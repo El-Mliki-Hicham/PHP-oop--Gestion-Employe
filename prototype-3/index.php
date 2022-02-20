@@ -3,7 +3,7 @@
 include 'configuration.php';
 include 'employeManager.php';
 $employeManager = new EmployeManager();
-$data = $employeManager->getEmplyoes($connectData);
+$data = $employeManager->getEmployes($connectData);
 
 ?>
 

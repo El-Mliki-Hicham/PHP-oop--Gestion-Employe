@@ -4,7 +4,7 @@ class EmployeManager {
 
 
     // getEmplyoes =  pour affichage dans index.php
-    public function getEmplyoes($connectData){
+    public function getEmployes($connectData){
         $getData = 'SELECT id,Prenom,Nom,Age FROM personnes';
         $resulta = mysqli_query($connectData,$getData);
         $data = mysqli_fetch_all($resulta,MYSQLI_ASSOC);
@@ -28,6 +28,7 @@ class EmployeManager {
     public function SelectRowEdit($connectData,$id){
         $getRow = "SELECT * FROM personnes WHERE id=$id";
         $resulta= mysqli_query($connectData, $getRow);
+       // musqli_fetch_assoc = change data  en array 
         $data = mysqli_fetch_assoc($resulta);
         return $data;
     } 

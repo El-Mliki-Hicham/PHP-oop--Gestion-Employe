@@ -7,7 +7,7 @@
 
     if(isset($_GET["id"])){
         $id = $_GET["id"];
-        $employe = $employeManager->SelectRowEdit($connectData,$id);
+        $afficherValue = $employeManager->SelectRowEdit($connectData,$id);
 
     }
 
@@ -30,9 +30,9 @@
 
 
 <form action="" method="POST">
-Prenom : 	<input type="text" value=<?php echo $employe['Prenom']?> name="prenom" >
-Nom: 		<input type="text" value=<?php echo $employe['Nom']?>  name="nom" >
-Age : 		<input type="text" value=<?php echo $employe['Age']?>  name="age" >
+Prenom : 	<input type="text" value=<?php echo $afficherValue['Prenom']?> name="prenom" >
+Nom: 		<input type="text" value=<?php echo $afficherValue['Nom']?>  name="nom" >
+Age : 		<input type="text" value=<?php echo $afficherValue['Age']?>  name="age" >
    
 <button type="submit">modifier</button>
 
