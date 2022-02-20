@@ -1,7 +1,7 @@
 <?php
 
 include 'configuration.php';
-include 'employeeManager.php';
+include 'employeManager.php';
 $employeManager = new EmployeManager();
 $data = $employeManager->getEmplyoes($connectData);
 

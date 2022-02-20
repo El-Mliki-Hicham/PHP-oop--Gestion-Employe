@@ -5,7 +5,7 @@ class EmployeManager {
 
     // getEmplyoes =  pour affichage dans index.php
     public function getEmplyoes($connectData){
-        $getData = 'SELECT id,  Prenom,Nom,Age FROM personnes';
+        $getData = 'SELECT id,Prenom,Nom,Age FROM personnes';
         $resulta = mysqli_query($connectData,$getData);
         $data = mysqli_fetch_all($resulta,MYSQLI_ASSOC);
         return $data ; 
@@ -17,7 +17,7 @@ class EmployeManager {
         $Nom = $employe->getLastName();
         $Age = $employe->getAge();
 
-        $insertData = "INSERT INTO personnes(Prenom,Nom,Age,id)
+        $insertData = "INSERT INTO personnes(Prenom,Nom,Age)
         VALUE ('$Prenom','$Nom','$Age')";
         
         mysqli_query($connectData,$insertData);
@@ -26,7 +26,7 @@ class EmployeManager {
     
     // SelectRowEdit = pour selection row et afficher dans input 
     public function SelectRowEdit($connectData,$id){
-        $getRow = "SELECT * FROM personnes where id=$id";
+        $getRow = "SELECT * FROM personnes WHERE id=$id";
         $resulta= mysqli_query($connectData, $getRow);
         $data = mysqli_fetch_assoc($resulta);
         return $data;

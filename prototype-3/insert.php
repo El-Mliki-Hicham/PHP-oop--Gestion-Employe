@@ -1,8 +1,8 @@
 <?php
 
     include 'configuration.php';
-	include 'employee.php';
-	include 'employeeManager.php';
+	include 'employe.php';
+	include 'employeManager.php';
 
    if(!empty($_POST)){
 	   $employe = new Employe();
