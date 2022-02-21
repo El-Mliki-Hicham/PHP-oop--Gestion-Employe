@@ -3,7 +3,7 @@
 class EmployeManager {
 
 
-    // getEmplyoes =  pour affichage dans index.php
+    // getEmployes =  pour affichage dans index.php
     public function getEmployes($connectData){
         $getData = 'SELECT id,Prenom,Nom,Age FROM personnes';
         $resulta = mysqli_query($connectData,$getData);
@@ -54,6 +54,8 @@ class EmployeManager {
         $DeletRow = "DELETE FROM personnes where id=$id";
         mysqli_query($connectData,$DeletRow);
     }
+
+
 
 
 
