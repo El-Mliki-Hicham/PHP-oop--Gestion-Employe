@@ -19,10 +19,10 @@ class GestionEmployes{
 
         $nom = $employe->getNom();
         $prenom = $employe->getPrenom();
-        $dateNaissance = $employe->getDate_de_naissance();
+        $Date_de_naissance = $employe->getDate_de_naissance();
         // requête SQL
-        $insertRow="INSERT INTO Employes(Nom, Prenom, Date_de_naissance) 
-                                VALUES('$nom', '$prenom', '$dateNaissance')";
+        $insertRow="INSERT INTO personnes(Nom, Prenom, Date_de_naissance) 
+                                VALUES('$nom', '$prenom', '$Date_de_naissance')";
 
         mysqli_query($this->getConnection(), $insertRow);
     }
@@ -66,14 +66,13 @@ class GestionEmployes{
         mysqli_query($this->getConnection(), $RowDelet);
     }
 
-    public function Modifier($id,$nom,$prenom,$date_de_naissance)
-    {
+    public function Modifier($id,$nom,$prenom,$date_de_naissance){
         // Requête SQL
         $RowUpdate = "UPDATE personnes SET 
         Nom='$nom', Prenom='$prenom', Date_de_naissance='$date_de_naissance'
-        WHERE id= $id";
+        WHERE id=$id";
 
-        mysqli_query($this->getConnection(), $RowUpdate);
+        mysqli_query($this->getConnection(),$RowUpdate);
 
     }
 
