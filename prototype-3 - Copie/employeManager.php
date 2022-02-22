@@ -7,8 +7,8 @@ class EmployeManager {
     public function getEmployes($connectData){
         $getData = 'SELECT id,Prenom,Nom,Age FROM personnes';
         $resulta = mysqli_query($connectData,$getData);
-        $data = mysqli_fetch_all($resulta,MYSQLI_ASSOC);
-        return $data ; 
+        // $data = mysqli_fetch_all($resulta,MYSQLI_ASSOC);
+        return $resulta ; 
     }
 
     // insertEmploye = pour ajoute les information dans fichier insert.php 
@@ -29,8 +29,8 @@ class EmployeManager {
         $getRow = "SELECT * FROM personnes WHERE id=$id";
         $resulta= mysqli_query($connectData, $getRow);
        // musqli_fetch_assoc = change data  en array 
-        $data = mysqli_fetch_assoc($resulta);
-        return $data;
+        // $data = mysqli_fetch_assoc($resulta);
+        return $resulta;
     } 
 
 
