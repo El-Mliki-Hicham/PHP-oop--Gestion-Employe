@@ -15,7 +15,6 @@
                 $employee->setId($employee_list->id);
                 $employee->setFirstName($employee_list->first_name);
                 $employee->setLastName($employee_list->last_name);
-                $employee->setGender($employee_list->gender);
                 $employee->setAge($employee_list->age);
                 array_push($employees, $employee);
             }
@@ -35,7 +34,6 @@
                                     'id'=> $employee->getId(),
                                     'first_name' => $employee->getFirstName(),
                                     'last_name' => $employee->getLastName(),
-                                    'gender' => $employee->getGender(),
                                     'age' => $employee->getAge()
                                     );
             
@@ -59,14 +57,13 @@
         }
 
 
-        public function editEmployee($id, $first_name, $last_name, $gender, $age){
+        public function editEmployee($id, $first_name, $last_name,  $age){
             $file = file_get_contents('employees.json');
             $data = json_decode($file);
             $employeeToList = array(
                                     'id'=> $id,
                                     'first_name' => $first_name,
                                     'last_name' => $last_name,
-                                    'gender' => $gender,
                                     'age' => $age
                                     );
 
@@ -91,7 +88,6 @@
                     $employee->setId($employee_data->id);
                     $employee->setFirstName($employee_data->first_name);
                     $employee->setLastName($employee_data->last_name);
-                    $employee->setGender($employee_data->gender);
                     $employee->setAge($employee_data->age);
                     break;
                 }

@@ -1,5 +1,5 @@
 <?php
-    include 'config.php';
+    
     include 'employeeManager.php';
 
     $employeeManager = new EmployeeManager();
@@ -24,7 +24,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Age</th>
-                <th>Gender</th>
+              
                 <th>Action</th>
             </tr>
 
@@ -36,7 +36,6 @@
                 <td><?= $employee->getFirstName()?></td>
                 <td><?= $employee->getLastName()?></td>
                 <td><?= $employee->getAge()?></td>
-                <td><?= $employee->getGender()?></td>
                 <td>
                     <a href="edit.php?id=<?php echo $employee->getId() ?>">Edit</a>
                     <a href="delete.php?id=<?php echo $employee->getId() ?>">delete</a>

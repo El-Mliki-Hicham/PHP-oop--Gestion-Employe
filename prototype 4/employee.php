@@ -29,14 +29,6 @@
             $this->lastName= $value;
         }
 
-        public function getGender(){
-            return $this->gender;
-        }
-
-        public function setGender($value){
-            $this->gender= $value;
-        }
-
         public function getAge(){
             return $this->age;
         }

@@ -13,11 +13,10 @@
 		$id = $_POST['id'];
 		$first_name = $_POST['first_name'];
 		$last_name = $_POST['last_name'];
-		$gender = $_POST['gender'];
 		$age = $_POST['age'];
   
 
-        $employeeManager->editEmployee($id, $first_name, $last_name, $gender, $age);
+        $employeeManager->editEmployee($id, $first_name, $last_name, $age);
 
         header('Location: index.php');
         
@@ -77,16 +76,7 @@
 					>
 				<span></span>
 			</div>
-				<div class="form-group">
-					<label for="inputGender">Gender</label>
-					<select class="form-control" required="required" id="inputGender" name="gender" >
-						<option>Please Select</option>
-                        <option value="Male" <?= $employee->getGender()== 'Male' ? 'selected' : '' ?>>Male</option>
-						<option value="Female" <?= $employee->getGender()== 'Female' ? 'selected' : '' ?>>Female</option>
-					</select>
-					<span></span>
-        		</div>
-    
+				
 			<div class="form-actions">
 					<input name="update" type="submit" value="Update">
 					<a href="index.php">Back</a>
