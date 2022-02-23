@@ -4,7 +4,6 @@
 class GestionEmploye{
 
     public function GetEmploye(){
-
         $fichier = file_get_contents('employees,json');
         $Data = json_decode($fichier);
         $tableuEmployes=array();
@@ -71,6 +70,20 @@ public function EditRowEmploye($id){
         }
     }
     return $employee;
+}
+
+public function deleteEmployee($id){
+    $fichier = file_get_contents('employees.json');
+    $data = json_decode($fichier);
+    for($i = 0; $i < count($data); ++$i){
+        if($data[$i]->id== $id){
+            unset($data[$i]);
+            // Remove the keys from data array after remove the item
+            $data = array_values($data);
+            file_put_contents("employees.json",json_encode($data));
+            break;
+        }
+    }
 }
 
 
