@@ -3,7 +3,6 @@
         private $id;
         private $firstName;
         private $lastName;
-        private $gender;
         private $age;
 
         public function getId(){
