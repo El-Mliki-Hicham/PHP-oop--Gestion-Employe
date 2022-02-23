@@ -43,10 +43,10 @@ class GestionEmployes{
             $employe->setDate_de_naissance ($value_Data['Date_de_naissance']);
             array_push($TableData, $employe);
         }
-        return $TableData;
+          return $TableData;
     }
 
-
+// pour afficher dans input
     public function RechercherParId($id){
         $SelectRowId = "SELECT * FROM personnes WHERE id= $id";
         $result = mysqli_query($this->getConnection(),  $SelectRowId);

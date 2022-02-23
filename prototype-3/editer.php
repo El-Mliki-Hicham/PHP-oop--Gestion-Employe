@@ -2,11 +2,11 @@
 
 include "GestionEmployes.php";
 $gestionEmployes = new GestionEmployes();
-
+//afficher dans input
 if(isset($_GET['id'])){
     $afficherValue = $gestionEmployes->RechercherParId($_GET['id']);
 }
-
+// modifier les donnes
 if(!empty($_POST)){
     $id = $_POST['id'];
     $nom = $_POST['nom'];
