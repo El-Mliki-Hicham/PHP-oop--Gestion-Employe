@@ -29,7 +29,7 @@ public function insertEmploye($employe){
             'Prenom'=>$employe->getFirstName(),
             'Nom'=>$employe->getLastName(),
             'Age'=>$employe->getAge(),
-        );
+         );
         array_push($tableuEmployes , $employe);
         file_put_contents('employees.json', json_encode($Data));
 
